@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ProjectDetailContainer, ContentAreaContainer, ProjectButton, LikeContainer } from './styles';
 
-const URL = 'http://localhost:51770/projects';
+const URL = 'https://alunosflix.appspot.com/projects';
 
 export default function ProjectDetail(props) {
   const [project, setProject] = useState(props)

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Menu from '../../components/Menu'
 import CarouselProjects from '../../components/CarouselProjects';
 
-const URL = 'http://localhost:51770/projects/list-grouped';
+const URL = 'https://alunosflix.appspot.com/projects/list-grouped';
 
 function Listar() {
 

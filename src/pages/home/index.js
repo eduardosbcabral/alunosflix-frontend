@@ -9,7 +9,7 @@ import dadosIniciais from '../../data/dados_iniciais.json';
 import TopProject from '../../components/TopProject';
 import ProjectDetail from '../../components/ProjectDetail';
 
-const URL = 'http://localhost:51770/projects/list-top';
+const URL = 'https://alunosflix.appspot.com/projects/list-top';
 
 function Home() {
 

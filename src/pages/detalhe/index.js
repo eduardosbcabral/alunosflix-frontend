@@ -5,7 +5,7 @@ import ProjectDetail from '../../components/ProjectDetail';
 import Menu from '../../components/Menu';
 import Footer from '../../components/Footer';
 
-const URL = 'http://localhost:51770/projects/get';
+const URL = 'https://alunosflix.appspot.com/projects/get';
 
 function getId(props) {
     return props.match.params.id;

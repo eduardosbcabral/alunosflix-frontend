@@ -5,8 +5,6 @@ import { createBrowserHistory } from 'history';
 import SearchInput from '../SearchInput';
 import SearchButtonSubmit from './components/SearchButtonSubmit';
 
-let URL = 'http://localhost:51770/projects';
-
 function Search() {
 
     const initialValue = '';

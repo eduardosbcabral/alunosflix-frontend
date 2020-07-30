@@ -4,7 +4,7 @@ import Menu from '../../components/Menu'
 import Footer from '../../components/Footer'
 import CarouselProjects from '../../components/CarouselProjects';
 
-const URL = 'http://localhost:51770/projects/list-all';
+const URL = 'https://alunosflix.appspot.com/projects/list-all';
 
 function getSearchString(props) {
   return props.match.params.searchString;
