@@ -29,3 +29,15 @@ a {
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 800px) {
+  .lista-projetos-container {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 499px) {
+  .lista-projetos-container {
+    padding-top: 150px;
+  }
+}

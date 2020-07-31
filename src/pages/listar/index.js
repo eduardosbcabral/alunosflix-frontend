@@ -22,15 +22,17 @@ function Listar() {
   return (
     <div style={{background: "#141414"}}>
       <Menu />
-      {projects.map((project, index) => {
-        return (
-          <CarouselProjects
-            key={index}
-            title={project.alphabet}
-            projects={project.subList}
-          />
-        );
-      })}
+      <div class="lista-projetos-container">
+        {projects.map((project, index) => {
+          return (
+            <CarouselProjects
+              key={index}
+              title={project.alphabet}
+              projects={project.subList}
+            />
+          );
+        })}
+      </div>
     </ div>
   );
 }
