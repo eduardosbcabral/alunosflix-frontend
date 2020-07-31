@@ -38,7 +38,6 @@ function DetalheProjeto(props) {
                         projectLikes={project.likes}
                         projectAuthorAvatar={project.authorAvatar}
                         projectId={project.id}
-                        title={project.author}
                     />
                 )}
             <Footer />

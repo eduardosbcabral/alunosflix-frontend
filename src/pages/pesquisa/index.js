@@ -30,10 +30,12 @@ function Pesquisa(props) {
   return (
     <div style={{background: "#141414"}}>
       <Menu />
-      <CarouselProjects
-				title={'Resultados para: ' + getSearchString(props) }
-				projects={projects}
-			/>
+      <div style={{minHeight: '1080px'}}>
+        <CarouselProjects
+          title={'Resultados para: ' + getSearchString(props) }
+          projects={projects}
+        />
+      </div>
 			<Footer />
     </ div>
   );

@@ -8,7 +8,6 @@ function CarouselProjects({
   title,
   ignoreFirstProject
 }) {
-  console.log(projects);
   const categoryTitle = title;
   const categoryColor = '#7E78D2';
 
