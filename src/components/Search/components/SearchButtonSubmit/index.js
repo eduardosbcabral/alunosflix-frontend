@@ -19,6 +19,7 @@ const SearchButtonSubmit = styled.button`
 	@media (max-width: 830px) {
 		width: 29px;
 	}
+
 `;
 
 SearchButtonSubmit.Icon = styled(AiOutlineSearch)`

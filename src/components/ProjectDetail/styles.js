@@ -15,6 +15,11 @@ export const ContentAreaContainer = styled.section`
     padding-top: 100px;
     flex-direction: column;
   }
+
+  @media (max-width: 499px) {
+    padding-top: 150px;
+    flex-direction: column;
+  }
 `;
 
 ContentAreaContainer.Item = styled.div`
@@ -50,6 +55,16 @@ ContentAreaContainer.Category = styled.h1`
 ContentAreaContainer.Avatar = styled.img`
   width: 100px;
   border-radius: 50%;
+
+  @media (max-width: 800px) {
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 499px) {
+    display: block;
+    margin: 0 auto;
+  }
 `;
 
 ContentAreaContainer.Description = styled.p`
@@ -63,8 +78,15 @@ ContentAreaContainer.Description = styled.p`
 ContentAreaContainer.DescriptionLink = styled.a`
   font-size: 20px;
   margin-bottom: 5px;
+  display: block;
   @media (max-width: 800px) {
     text-align: center;
+  }
+
+
+  @media (max-width: 499px) {
+    text-align: center;
+
   }
 `;
 
@@ -202,6 +224,16 @@ LikeContainer.LikeButton = styled(FcLike)`
     cursor: pointer;
     opacity: .7;
   }
+
+  @media (max-width: 800px) {
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 499px) {
+    display: block;
+    margin: 0 auto;
+  }
 `;
 
 LikeContainer.DislikeButton = styled(FcDislike)`
@@ -210,5 +242,15 @@ LikeContainer.DislikeButton = styled(FcDislike)`
   &:hover {
     cursor: pointer;
     opacity: .7;
+  }
+
+  @media (max-width: 800px) {
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 499px) {
+    display: block;
+    margin: 0 auto;
   }
 `;

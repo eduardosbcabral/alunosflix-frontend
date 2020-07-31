@@ -42,6 +42,21 @@ body {
 	}
 }
 
+@media (max-width: 499px) {
+	.Menu {
+		height: 175px;
+		flex-direction: column;
+	}
+	.Logo {
+		margin: 0;
+		margin-top: 15px;
+		margin-left: 11px;
+	}
+	.search {
+		
+	}
+}
+
 @media (max-width: 800px) {
 	a.ButtonLink {
 		position: fixed;

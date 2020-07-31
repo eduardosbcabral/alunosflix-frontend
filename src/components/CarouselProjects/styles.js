@@ -59,4 +59,14 @@ export const ProjectCardGroupContainer = styled.section`
   min-height: 197px;
   margin-left: 5%;
   margin-bottom: 16px;
+
+  @media (max-width: 800px) {
+    padding-top: 70px;
+    flex-direction: column;
+  }
+
+  @media (max-width: 499px) {
+    padding-top: 150px;
+    flex-direction: column;
+  }
 `;

@@ -20,7 +20,7 @@ function Menu() {
                 Listar alunos
             </Button>
 
-            <Search className="nav-item" />
+            <Search className="nav-item search" />
         </nav>
     );
 }

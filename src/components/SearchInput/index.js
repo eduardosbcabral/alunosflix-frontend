@@ -18,6 +18,11 @@ const SearchInput = styled.input`
 	@media (max-width: 830px) {
 		width: 70%;
 	}
+
+	@media (max-width: 499px) {
+		width: 75%;
+		margin-left: 15px;
+	}
 `;
 
 export default SearchInput;

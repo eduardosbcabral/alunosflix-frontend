@@ -33,7 +33,7 @@ function Search() {
         <div className="nav-item">
             <form onSubmit={handleSubmit}>
                 <SearchInput 
-                    placeholder="Pesquisar Aluno ou Projeto"
+                    placeholder="Pesquisar"
                     value={search}
                     onChange={handleChange} />
                 <SearchButtonSubmit type="submit">
