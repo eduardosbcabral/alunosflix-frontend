@@ -36,7 +36,7 @@ function Home() {
             />
           )}
         </div>
-        {/* <div style={{display: 'flex', flex: 1}}>
+        <div style={{display: 'flex'}}>
           {projects && (
             <ProjectList
               projects={projects}
@@ -44,7 +44,7 @@ function Home() {
               ignoreFirstProject
             />
           )}
-        </div> */}
+        </div>
       </div>
     </PageDefault>
   );
