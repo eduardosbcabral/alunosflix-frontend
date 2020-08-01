@@ -13,7 +13,7 @@ function ProjectList({ projects, ignoreFirstProject, title }) {
 				</div>
 			)}
 			<div style={{display: 'flex'}}>
-				{/* <List>
+				<List>
 					{projects.map((project, index) => {
 						if (ignoreFirstProject && index === 0) {
 								return null;
@@ -31,7 +31,7 @@ function ProjectList({ projects, ignoreFirstProject, title }) {
 							</List.Item>
 						);
 					})}
-				</List> */}
+				</List>
 			</div>
 		</div>
     );

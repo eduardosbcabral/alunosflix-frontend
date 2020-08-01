@@ -11,7 +11,7 @@ function ProjectCard({ projectUrl, projectAuthor, projectLikes, categoryColor, p
   }
 
   return (
-    <Container onClick={handleClick}>
+    <div onClick={handleClick}>
       <Avatar.Container>
         <Avatar.Image.Container>
           <Avatar.Image src={projectAvatar} />
@@ -27,7 +27,7 @@ function ProjectCard({ projectUrl, projectAuthor, projectLikes, categoryColor, p
           {projectLikes}
         </Likes.Text>
       </Likes.Container>
-    </Container>
+    </div>
   );
 }
 
