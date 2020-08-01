@@ -59,11 +59,11 @@ export default function ProjectDetail({
             {likes}
           </Profile.Info.Likes>
           <Profile.Info.Likes.Icon.Container>
-          {
+          {/* {
             checkLikedState() 
             ? <Profile.Info.Likes.Icon.Like onClick={handleLike} />
             : <Profile.Info.Likes.Icon.Dislike onClick={handleDislike} />
-          }  
+          }   */}
           </Profile.Info.Likes.Icon.Container>
         </Profile.Info.Likes.Container>
         {title && (
