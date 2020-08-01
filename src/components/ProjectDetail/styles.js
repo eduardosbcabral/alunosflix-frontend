@@ -10,6 +10,7 @@ export const Container = styled.div`
 
 export const Header = styled.div`
     height: 200px;
+    width: 100%;
     background: url(${props => props.url});
     background-size: cover;
     filter: blur(1px);
