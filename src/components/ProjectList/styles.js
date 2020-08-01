@@ -23,7 +23,7 @@ export const Title = styled.h3`
 
 export const List = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   row-gap: 25px;
   column-gap: 10px;
   list-style: none;

@@ -21,21 +21,23 @@ export default function ProjectDetail({
   }, [projectLikes]);
 
   async function handleLike() {
-    const response = await fetch(`${URL}/like?id=${projectId}`);
-    if(response.ok) {
-      localStorage.setItem(projectId, 'liked');
-      setLikes(likes+1);
-    }
+    // const response = await fetch(`${URL}/like?id=${projectId}`);
+    // if(response.ok) {
+    //   localStorage.setItem(projectId, 'liked');
+    //   setLikes(likes+1);
+    // }
+    setLikes(likes+1);
   }
 
   async function handleDislike() {
-    const response = await fetch(`${URL}/dislike?id=${projectId}`);
-    if(response.ok) {
-        if(projectLikes > 0) {
-          localStorage.removeItem(projectId, 'liked');
-          setLikes(likes-1);
-        }
-    }
+    // const response = await fetch(`${URL}/dislike?id=${projectId}`);
+    // if(response.ok) {
+    //     if(projectLikes > 0) {
+    //       localStorage.removeItem(projectId, 'liked');
+    //       setLikes(likes-1);
+    //     }
+    // }
+    setLikes(likes-1);
   }
 
   function checkLikedState() {
