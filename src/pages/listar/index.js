@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import Menu from '../../components/Menu'
-import CarouselProjects from '../../components/CarouselProjects';
+import PageDefault from '../../components/PageDefault';
+import ProjectList from '../../components/ProjectList';
 
-const URL = 'https://alunosflix.appspot.com/projects/list-grouped';
+const URL = 'https://alunosflix.appspot.com/projects/list-top';
 
 function Listar() {
 
@@ -20,20 +20,12 @@ function Listar() {
   }
 
   return (
-    <div style={{background: "#141414"}}>
-      <Menu />
-      <div class="lista-projetos-container">
-        {projects.map((project, index) => {
-          return (
-            <CarouselProjects
-              key={index}
-              title={project.alphabet}
-              projects={project.subList}
-            />
-          );
-        })}
-      </div>
-    </ div>
+    <PageDefault>
+      <ProjectList
+        projects={projects}
+        title="TOP PROJETOS"
+      />
+    </PageDefault>
   );
 }
 

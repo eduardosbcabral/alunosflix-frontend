@@ -5,11 +5,11 @@
 
 :root {
   --primary: #7E78D2;
-  --black: #000000;
-  --blackLighter: #9E9E9E;
+  --black: #0F0F0F;
+  --blackLighter: #2D2E2E;
   --grayLight: #F5F5F5;
   --grayMedium: #e5e5e5; 
-  --white: #FFFFFF;
+  --white: #FBFBFB;
   --frontEnd: #6BD1FF;
   --backEnd: #00C86F;
 }
@@ -20,24 +20,18 @@ body {
   padding: 0;
 }
 
+body {
+  --bodyPaddingTop: 80px;
+	padding-top: var(--bodyPaddingTop);
+}
+
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 #root {
   min-height: calc(100vh - var(--bodyPaddingTop));
   display: flex;
   flex-direction: column;
-}
-
-@media (max-width: 800px) {
-  .lista-projetos-container {
-    padding-top: 70px;
-  }
-}
-
-@media (max-width: 499px) {
-  .lista-projetos-container {
-    padding-top: 150px;
-  }
 }

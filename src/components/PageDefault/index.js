@@ -4,13 +4,26 @@ import Footer from '../Footer';
 import styled from 'styled-components';
 
 const Main = styled.main`
-    background-color: var(--black);
     color: var(--white);
+    display: flex;
     flex: 1;
-    padding-top: 50px;
-    padding-left: 5%;
-    padding-right: 5%;
     height: 100%;
+    width: 100%;
+`;
+
+Main.Container = styled.div`
+    display: flex;
+    flex: 1;
+
+    transition: all .5s;
+
+    @media(min-width: 1500px) {
+        margin-left: auto;
+        margin-right: auto;
+        flex: 0.7;
+        border-right: 1px solid var(--grayMedium);
+        border-left: 1px solid var(--grayMedium);
+    }
 `;
 
 function PageDefault({ children }) {
@@ -18,9 +31,11 @@ function PageDefault({ children }) {
         <>
             <Menu />
                 <Main>
-                    {children}
+                    <Main.Container>
+                        {children}
+                    </Main.Container>
                 </Main>
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 }

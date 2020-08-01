@@ -29,19 +29,17 @@ function DetalheProjeto(props) {
     }
 
     return (
-        <div style={{background: "#141414"}}>
-            <Menu />
-                {project && (
-                    <ProjectDetail 
-                        projectUrl={project.url}
-                        projectAuthor={project.author}
-                        projectLikes={project.likes}
-                        projectAuthorAvatar={project.authorAvatar}
-                        projectId={project.id}
-                    />
-                )}
-            <Footer />
-        </div>
+        <PageDefault>
+            {project && (
+                <ProjectDetail 
+                    projectUrl={project.url}
+                    projectAuthor={project.author}
+                    projectLikes={project.likes}
+                    projectAuthorAvatar={project.authorAvatar}
+                    projectId={project.id}
+                />
+            )}
+        </PageDefault>
     )
 }
 

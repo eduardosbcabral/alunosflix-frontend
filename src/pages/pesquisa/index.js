@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import Menu from '../../components/Menu'
-import Footer from '../../components/Footer'
-import CarouselProjects from '../../components/CarouselProjects';
+import PageDefault from '../../components/PageDefault';
+import ProjectList from '../../components/ProjectList';
 
 const URL = 'https://alunosflix.appspot.com/projects/list-all';
 
@@ -28,16 +27,12 @@ function Pesquisa(props) {
   }
 
   return (
-    <div style={{background: "#141414"}}>
-      <Menu />
-      <div style={{minHeight: '1080px'}}>
-        <CarouselProjects
-          title={'Resultados para: ' + getSearchString(props) }
-          projects={projects}
-        />
-      </div>
-			<Footer />
-    </ div>
+    <PageDefault>
+      <ProjectList
+        projects={projects}
+        title={'Exibindo resultados para: ' + getSearchString(props)}
+      />
+    </PageDefault>
   );
 }
 

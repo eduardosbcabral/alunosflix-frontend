@@ -1,81 +1,87 @@
 import React, { useState, useEffect } from 'react';
-import { ProjectDetailContainer, ContentAreaContainer, ProjectButton, LikeContainer } from './styles';
+import { Container, Header, Profile } from './styles';
 
 const URL = 'https://alunosflix.appspot.com/projects';
 
-export default function ProjectDetail(props) {
-  const [project, setProject] = useState(props)
-  const [, updateState] = React.useState();
+export default function ProjectDetail({ 
+  projectId, 
+  projectAuthor, 
+  projectAuthorAvatar, 
+  projectLikes,
+  projectUrl,
+  title
+}) {
+
+  const backgroundURL = `https://api.screenshotmachine.com/?key=296fe8&url=${projectUrl}/&dimension=1024x768`;
+
+  const [likes, setLikes] = useState(projectLikes);
 
   useEffect(() => {
-    setProject(props)
-  }, [props]);
+    setLikes(projectLikes);
+  }, [projectLikes]);
 
   async function handleLike() {
-    const response = await fetch(`${URL}/like?id=${project.projectId}`);
-        if(response.ok) {
-          let updatedProject = Object.assign({}, project);
-          updatedProject.projectLikes++;
-          localStorage.setItem(project.projectId, 'liked');
-          setProject(updatedProject);
-        }
+    const response = await fetch(`${URL}/like?id=${projectId}`);
+    if(response.ok) {
+      localStorage.setItem(projectId, 'liked');
+      setLikes(likes+1);
+    }
   }
 
   async function handleDislike() {
-    const response = await fetch(`${URL}/dislike?id=${project.projectId}`);
-        if(response.ok) {
-            if(project.projectLikes > 0) {
-              let updatedProject = Object.assign({}, project);
-              updatedProject.projectLikes--;
-              localStorage.removeItem(project.projectId, 'liked');
-              setProject(updatedProject);
-              forceUpdate();
-            }
+    const response = await fetch(`${URL}/dislike?id=${projectId}`);
+    if(response.ok) {
+        if(projectLikes > 0) {
+          localStorage.removeItem(projectId, 'liked');
+          setLikes(likes-1);
         }
+    }
   }
 
   function checkLikedState() {
-    let isLiked = localStorage.getItem(project.projectId);
+    let isLiked = localStorage.getItem(projectId);
     return isLiked === null;
   }
 
-  const forceUpdate = React.useCallback(() => updateState({}), []);
-
   return (
-    <ProjectDetailContainer>
-      <ContentAreaContainer>
-        <ContentAreaContainer.Item>
-          {props.title ? <ContentAreaContainer.TitleOne>
-            {props.title}
-          </ContentAreaContainer.TitleOne> : ''}
-          <ContentAreaContainer.Avatar src={project.projectAuthorAvatar} />
-          <ContentAreaContainer.TitleTwo>
-            {props.projectAuthor}
-          </ContentAreaContainer.TitleTwo>
-          <ContentAreaContainer.DescriptionLink href={project.projectUrl} target="_blank">
-            {project.projectUrl}
-          </ContentAreaContainer.DescriptionLink>
-          <ContentAreaContainer.LikesContainer>
-            <ContentAreaContainer.Likes>
-              {project.projectLikes}
-            </ContentAreaContainer.Likes>
-            <ContentAreaContainer.LikesDescription>
-              {project.projectLikes === 1 ? 'Curtida' : 'Curtidas'}
-            </ContentAreaContainer.LikesDescription>
-          </ContentAreaContainer.LikesContainer>
-          <LikeContainer>
-            {checkLikedState()
-            ? <LikeContainer.LikeButton onClick={handleLike} />
-            : <LikeContainer.DislikeButton onClick={handleDislike} /> }
-          </LikeContainer>
-        </ContentAreaContainer.Item>
-
-        <ContentAreaContainer.Item>
-          <ProjectButton href={project.projectUrl} target="_blank">
-            Abrir projeto
-          </ProjectButton>
-        </ContentAreaContainer.Item>
-      </ContentAreaContainer>
-    </ProjectDetailContainer>
+    <Container>
+      <Header
+        url={backgroundURL}
+      />
+      <Profile.Image.Container>
+        <Profile.Image src={projectAuthorAvatar} />
+      </Profile.Image.Container>
+      <Profile.Info.Container>
+        <Profile.Info.Likes.Container>
+          <Profile.Info.Likes>
+            {likes}
+          </Profile.Info.Likes>
+          <Profile.Info.Likes.Icon.Container>
+          {
+            checkLikedState() 
+            ? <Profile.Info.Likes.Icon.Like onClick={handleLike} />
+            : <Profile.Info.Likes.Icon.Dislike onClick={handleDislike} />
+          }  
+          </Profile.Info.Likes.Icon.Container>
+        </Profile.Info.Likes.Container>
+        {title && (
+          <Profile.Info.Title.Container>
+            <Profile.Info.Title>
+              {title}
+            </Profile.Info.Title>
+          </Profile.Info.Title.Container>
+        )}
+        <Profile.Info.Name.Container>
+          <Profile.Info.Name>
+            {projectAuthor}
+          </Profile.Info.Name>
+        </Profile.Info.Name.Container>
+        <Profile.Info.Button.Container>
+          <Profile.Info.Button href={projectUrl} target="_blank">
+            ABRIR PROJETO
+          </Profile.Info.Button>
+        </Profile.Info.Button.Container>
+      </Profile.Info.Container>
+    </Container>
   );
 }

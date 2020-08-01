@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectCardContainer, CodeIcon, ProjectCardAvatar, ProjectCardAuthor, ProjectCardLikes, ProjectCardLikesDescription } from './styles';
+import { Container, Avatar, Likes } from './styles';
 import { useHistory } from 'react-router-dom';
 
 function ProjectCard({ projectUrl, projectAuthor, projectLikes, categoryColor, projectAvatar, projectId }) {
@@ -11,23 +11,23 @@ function ProjectCard({ projectUrl, projectAuthor, projectLikes, categoryColor, p
   }
 
   return (
-    <ProjectCardContainer
-      color={categoryColor}
-      title={projectUrl}
-      onClick={handleClick}
-    >
-      {/* <CodeIcon /> */}
-      <ProjectCardLikes>
-        {projectLikes}
-        <ProjectCardLikesDescription>
-          Curtidas
-        </ProjectCardLikesDescription>
-      </ProjectCardLikes>
-      <ProjectCardAvatar src={projectAvatar} />
-      <ProjectCardAuthor>
-        {projectAuthor}
-      </ProjectCardAuthor>
-    </ProjectCardContainer>
+    <Container onClick={handleClick}>
+      <Avatar.Container>
+        <Avatar.Image.Container>
+          <Avatar.Image src={projectAvatar} />
+        </Avatar.Image.Container>
+        <Avatar.Name.Container>
+          <Avatar.Name>
+            {projectAuthor}
+          </Avatar.Name>
+        </Avatar.Name.Container>
+      </Avatar.Container>
+      <Likes.Container>
+        <Likes.Text>
+          {projectLikes}
+        </Likes.Text>
+      </Likes.Container>
+    </Container>
   );
 }
 
