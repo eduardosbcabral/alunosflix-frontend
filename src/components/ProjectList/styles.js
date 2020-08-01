@@ -12,7 +12,6 @@ export const Title = styled.h3`
   background-color: var(--primary);
   margin: 0;
   margin-top: 15px;
-  overflow: hidden;
   transition: all .5s;
   margin-bottom: 15px;
 
