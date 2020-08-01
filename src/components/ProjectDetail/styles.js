@@ -69,7 +69,6 @@ Profile.Info.Container = styled.div`
 `;
 
 Profile.Info.Name = styled.span`
-    margin-left: 36px;
     font-weight: 800;
     font-size: 1.3rem;
     color: var(--blackLighter);
@@ -79,11 +78,14 @@ Profile.Info.Name = styled.span`
 Profile.Info.Name.Container = styled.div`
     display: flex;
     flex: 1;
+    padding-left: 36px;
+    @media (max-width: 800px) {
+        padding-left: 0;
+    }
 `;
 
 
 Profile.Info.Title = styled.span`
-    margin-left: 36px;
     font-weight: 800;
     font-size: 1.3rem;
     color: var(--primary);
@@ -93,6 +95,11 @@ Profile.Info.Title = styled.span`
 Profile.Info.Title.Container = styled.div`
     display: flex;
     flex: 1;
+    padding-left: 36px;
+
+    @media (max-width: 800px) {
+        padding-left: 0;
+    }
 `;
 
 Profile.Info.Likes = styled.span`
@@ -127,7 +134,7 @@ Profile.Info.Likes.Container = styled.div`
     display: flex;
     flex: 1;
     justify-content: flex-start;
-    margin-left: 215px;
+    padding-left: 215px;
 
     @media (max-width: 800px) {
         justify-content: flex-end;
@@ -143,7 +150,6 @@ Profile.Info.Button = styled.a`
     border-radius: 5px;
     font-weight: 600;
     margin-top: 10px;
-    margin-left: 35px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -165,4 +171,9 @@ Profile.Info.Button = styled.a`
 Profile.Info.Button.Container = styled.div`
     display: flex;
     flex: 1;
+    padding-left: 35px;
+
+    @media (max-width: 800px) {
+        padding-left: 0;
+    }
 `;
